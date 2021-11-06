@@ -1,5 +1,8 @@
-package com.switchfully.til;
+package com.switchfully.til.repository;
 
+import com.switchfully.til.domain.exceptions.NoSuchTilException;
+import com.switchfully.til.domain.entities.Person;
+import com.switchfully.til.domain.entities.Til;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

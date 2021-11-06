@@ -12,7 +12,7 @@
 
 <main class="col-10">
     <p class="text-center mt-2">Switchfully #TIL</p>
-    <form hx-post="http://localhost:8080/tils" hx-target="#replaceMe">
+    <form hx-post="http://localhost:5555/tils" hx-target="#replaceMe">
         <div class="mb-3 row">
             <label for="text-1636054885843" class="formbuilder-text-label">I am </label>
             <input type="text" class="form-control" name="ownerName" id="text-1636054885843" required="true">
@@ -30,7 +30,7 @@
         </div>
     </form>
 
-    <div id="til" hx-get="http://localhost:8080/tils" hx-ext="client-side-templates" hx-trigger="load, every 10s"
+    <div id="til" hx-get="http://localhost:5555/tils" hx-ext="client-side-templates" hx-trigger="load, every 10s"
          mustache-template="card">3 ... 2 ... 1
     </div>
 
@@ -41,13 +41,13 @@
                 <h5 class="card-title text-muted">{{temployee}}</h5>
                 <div class="card-text lead mb-2">{{til}}</div>
                 <button class="btn btn-primary" type="button"
-                        hx-patch="http://localhost:8080/tils/{{tid}}/like"
+                        hx-patch="http://localhost:5555/tils/{{tid}}/like"
                         hx-vals='js:{person: getPerson()}'
                         hx-swap="none">
                     Bookmark <i class="bi bi-bookmark-heart"></i>
                 </button>
                 <button class="btn btn-danger" type="button"
-                        hx-delete="http://localhost:8080/tils/{{tid}}"
+                        hx-delete="http://localhost:5555/tils/{{tid}}"
                         hx-confirm="Are you sure you want to delete this #TIL? It might not be yours ... #NoSecurity"
                         hx-target="#til-{{tid}}">
                     Archive <i class="bi bi-archive"></i>
